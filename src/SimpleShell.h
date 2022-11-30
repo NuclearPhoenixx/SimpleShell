@@ -16,6 +16,8 @@ class ShellCommand {
 			this->name = name;
 			this->func = func;
 		}
+		// TODO: Add ShellCommand for String too instead __FlashStringHelper
+		// TODO: Add optional description for "help"
 
 		void (*func)(String *args);
 		const __FlashStringHelper *name;
@@ -23,7 +25,7 @@ class ShellCommand {
 
 class CShell {
 	public:
-		void begin(int baudrate);
+		void begin(long baudrate);
 		void handleEvent();
 		void registerCommand(ShellCommand *com);
 
