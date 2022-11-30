@@ -1,4 +1,21 @@
+#####################################
+# Syntax Coloring Map For SimpleShell
+#####################################
+
+#####################################
+# Datatypes (KEYWORD1)
+#####################################
+
 Shell KEYWORD1
+
+#####################################
+# Methods and Functions (KEYWORD2)
+#####################################
+
 begin KEYWORD2
 registerCommand KEYWORD2
 handleEvent KEYWORD2
+
+#####################################
+# Constants (LITERAL1)
+#####################################
