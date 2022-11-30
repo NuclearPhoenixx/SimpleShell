@@ -8,9 +8,10 @@ void CShell::_help() {
 		Serial.print(F("- "));
 		Serial.println(_commands.get(i)->name);
 	}
+	// TODO: Print descriptions
 }
 
-void CShell::begin(int baudrate) {
+void CShell::begin(long baudrate) {
 	Serial.begin(baudrate);
 	Serial.println(F("Type 'help' for a list of commands."));
 	_draw_prompt();
@@ -18,7 +19,7 @@ void CShell::begin(int baudrate) {
 
 void CShell::registerCommand(ShellCommand *com) {
 	_commands.add(com);
-	//TODO sort ?
+	// TODO: Sort?
 }
 
 void CShell::_clear_buffer() {
@@ -44,6 +45,7 @@ void CShell::_run_command() {
 		}
 	}
 	Serial.println(F("Command not found."));
+	Serial.println(F("Type 'help' for a list of commands."));
 	_draw_prompt();
 }
 
@@ -86,7 +88,7 @@ void CShell::handleEvent() {
 
 				// Tab
 			case '\t':
-				//TODO completion ?
+				// TODO: Completion?
 				break;
 
 				// Ascii char
