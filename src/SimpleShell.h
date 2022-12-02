@@ -1,6 +1,6 @@
 /**
  * @author      : CaféHaine (kilian.guillaume@gmail.com)
- * @author		: NuclearPhoenix
+ * @author	: NuclearPhoenix
  * @file        : SimpleShell
  * @created     : Sunday Mar 08, 2020 08:33:56 CET
  */
