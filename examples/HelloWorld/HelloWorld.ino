@@ -14,7 +14,7 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
 
   // Register our 'helloworld' command
-  Shell.registerCommand(new ShellCommand(helloworld, F("helloworld")));
+  Shell.registerCommand(new ShellCommand(helloworld, "helloworld", "Optional Description"));
   // Setup the serial communication
   Shell.begin(BAUDRATE);
 }

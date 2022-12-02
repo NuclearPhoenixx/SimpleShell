@@ -3,12 +3,19 @@
 #include "SimpleShell.h"
 
 void CShell::_help() {
+	Serial.println(F("Usage:"));
+	Serial.println(F("\t<command> [options]"));
 	Serial.println(F("Commands:"));
-	for (byte i=0; i<_commands.size(); i++) {
-		Serial.print(F("- "));
-		Serial.println(_commands.get(i)->name);
+	for (uint8_t i=0; i<_commands.size(); i++) {
+		Serial.print(F("\t"));
+		Serial.print(_commands.get(i)->name);
+		
+		if (_commands.get(i)->desc != F("")) {
+			Serial.print("\t: ");
+			Serial.print(_commands.get(i)->desc);
+		}
+		Serial.println();
 	}
-	// TODO: Print descriptions
 }
 
 void CShell::begin(long baudrate) {
@@ -19,7 +26,8 @@ void CShell::begin(long baudrate) {
 
 void CShell::registerCommand(ShellCommand *com) {
 	_commands.add(com);
-	// TODO: Sort?
+	// TODO: Sorting? Use LinkedList instead...
+	// https://github.com/ivanseidel/LinkedList/blob/master/examples/Sort/Sort.ino
 }
 
 void CShell::_clear_buffer() {
@@ -31,12 +39,17 @@ void CShell::_draw_prompt() {
 }
 
 void CShell::_run_command() {
+	_buffer.trim();
+	if (_buffer.length() == 0) {
+		_draw_prompt();
+		return;
+	}
 	if (_buffer.startsWith(F("help"))) {
 		_help();
 		_draw_prompt();
 		return;
 	}
-	for (byte i=0; i<_commands.size(); i++) {
+	for (uint8_t i=0; i<_commands.size(); i++) {
 		ShellCommand *com = _commands.get(i);
 		if (_buffer.startsWith(com->name)) {
 			com->func(&_buffer);
@@ -88,7 +101,7 @@ void CShell::handleEvent() {
 
 				// Tab
 			case '\t':
-				// TODO: Completion?
+				// TODO: Tab Completion?
 				break;
 
 				// Ascii char

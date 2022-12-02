@@ -1,6 +1,7 @@
 /**
  * @author      : CaféHaine (kilian.guillaume@gmail.com)
- * @file        : Shell
+ * @author		: NuclearPhoenix
+ * @file        : SimpleShell
  * @created     : Sunday Mar 08, 2020 08:33:56 CET
  */
 
@@ -12,15 +13,21 @@
 
 class ShellCommand {
 	public:
-		ShellCommand(void (*func)(String *args), const __FlashStringHelper *name) {
-			this->name = name;
+		ShellCommand(void (*func)(String *args), const __FlashStringHelper *name, const __FlashStringHelper *desc = F("")) {
 			this->func = func;
+			this->name = name;
+			this->desc = desc;
 		}
-		// TODO: Add ShellCommand for String too instead __FlashStringHelper
-		// TODO: Add optional description for "help"
+		
+		ShellCommand(void (*func)(String *args), const char *name, const char *desc = "") {
+			this->func = func;
+			this->name = F(name);
+			this->desc = F(desc);
+		}
 
 		void (*func)(String *args);
 		const __FlashStringHelper *name;
+		const __FlashStringHelper *desc;
 };
 
 class CShell {
