@@ -1,4 +1,4 @@
-#include <SimpleShell.h>
+#include <SimpleShell_Enhanced.h>
 
 #define BAUDRATE 1200
 
