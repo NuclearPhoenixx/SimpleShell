@@ -1,6 +1,6 @@
 #include "Arduino.h"
 #include "LinkedPointerList.h"
-#include "SimpleShell.h"
+#include "SimpleShell_Enhanced.h"
 
 void CShell::_help() {
 	Serial.println(F("Usage:"));
