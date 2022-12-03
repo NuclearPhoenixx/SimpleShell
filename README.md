@@ -7,6 +7,8 @@ SimpleShell is a quick way to create commands, and control your arduino using th
 
 This fork aims to improve upon the original SimpleShell and continue maintaining the codebase.
 
+This library is also available in the Arduino IDE, see [Arduino Library List](https://www.arduinolibraries.info/libraries/simple-shell-enhanced).
+
 ```
 Type 'help' for a list of commands.
 > help
