@@ -1,4 +1,7 @@
 # SimpleShell Enhanced
+
+[![arduino-library-badge](https://www.ardu-badge.com/badge/SimpleShell%20Enhanced.svg?)](https://www.ardu-badge.com/SimpleShell%20Enhanced) ![latest version](https://img.shields.io/github/release/Phoenix1747/SimpleShell.svg?) ![issues](https://img.shields.io/github/issues/Phoenix1747/SimpleShell.svg?) ![open pr](https://img.shields.io/github/issues-pr-raw/Phoenix1747/SimpleShell.svg?)
+
 ## What is SimpleShell?
 SimpleShell is a quick way to create commands, and control your arduino using the serial interface.
 
