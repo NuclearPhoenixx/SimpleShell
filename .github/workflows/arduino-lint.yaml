@@ -8,4 +8,4 @@ jobs:
         with:
           project-type: library
           library-manager: update
-          compliance: strict
+          compliance: specification #strict
