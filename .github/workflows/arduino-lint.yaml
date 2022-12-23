@@ -12,7 +12,7 @@
     # Configuration of the checks for libraries in the Arduino Library Manager index.
     library-manager: update # optional
     # The type of project to check.
-    project-type: # optional, default is all
+    project-type: library # optional, default is all
     # Search path recursively for projects to check.
     recursive: # optional, default is false
     # Save a JSON formatted report on the checks to this file.
