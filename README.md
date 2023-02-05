@@ -21,5 +21,7 @@ Commands:
 
 Tab completion and descriptions will hopefully be supported someday.
 
+Also TODO: use [ivanseidel/LinkedList](https://github.com/ivanseidel/LinkedList) instead of the minimalistic LinkedPointerList for sorting all the commands.
+
 ## How to use it?
 See `examples/HelloWorld/HelloWorld.ino` for a simple example of a command.
