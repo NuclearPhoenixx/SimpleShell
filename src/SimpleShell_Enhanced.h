@@ -5,8 +5,8 @@
  * @created     : Sunday Mar 08, 2020 08:33:56 CET
  */
 
-#ifndef SHELL_H
-#define SHELL_H
+#ifndef SIMPLESHELL_ENHANCED_H
+#define SIMPLESHELL_ENHANCED_H
 
 #include "Arduino.h"
 #include "LinkedPointerList.h"
@@ -48,4 +48,4 @@ class CShell {
 
 static CShell Shell;
 
-#endif
+#endif // SIMPLESHELL_ENHANCED_H
