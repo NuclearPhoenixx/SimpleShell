@@ -2,6 +2,11 @@
 
 #define BAUDRATE 1200
 
+CShell shell;
+
+// Or specifiy a custom Serial port:
+// Shell shell(Serial1);
+
 void helloworld(String *args) {
   // Print "Hello World!"
   Serial.println("Hello World!");
@@ -14,14 +19,14 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
 
   // Register our 'helloworld' command
-  Shell.registerCommand(new ShellCommand(helloworld, "helloworld", "Optional Description"));
+  shell.registerCommand(new ShellCommand(helloworld, "helloworld", "Optional Description"));
   // Setup the serial communication
-  Shell.begin(BAUDRATE);
+  shell.begin(BAUDRATE);
 }
 
 void serialEvent() {
   // Handle the serial input
-  Shell.handleEvent();
+  shell.handleEvent();
 }
 
 void loop() {

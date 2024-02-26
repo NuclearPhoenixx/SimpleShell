@@ -6,7 +6,7 @@
 # Datatypes (KEYWORD1)
 #####################################
 
-Shell KEYWORD1
+CShell KEYWORD1
 
 #####################################
 # Methods and Functions (KEYWORD2)

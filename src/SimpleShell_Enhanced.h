@@ -6,7 +6,7 @@
  */
 
 #ifndef SIMPLESHELL_ENHANCED_H
-#define SIMPLESHELL_ENHANCED_H
+#define SIMPLESHELL_ENHANCED_H	
 
 #include "Arduino.h"
 #include "LinkedPointerList.h"
@@ -32,6 +32,7 @@ class ShellCommand {
 
 class CShell {
 	public:
+		CShell(HardwareSerial &Serialx = Serial);
 		void begin(long baudrate);
 		void handleEvent();
 		void registerCommand(ShellCommand *com);
@@ -42,10 +43,9 @@ class CShell {
 		void _draw_prompt();
 		void _run_command();
 
+		HardwareSerial *_serial;
 		String _buffer;
 		LinkedPointerList<ShellCommand> _commands;
 };
-
-static CShell Shell;
 
 #endif // SIMPLESHELL_ENHANCED_H
